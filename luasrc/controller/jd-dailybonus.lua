@@ -22,9 +22,7 @@ end
 function run()
     local running = luci.sys.call("busybox ps -w | grep JD_DailyBonus.js | grep -v grep >/dev/null") == 0
     if not running then
-        luci.sys.call('lua /usr/share/jd-dailybonus/gen_cookieset.lua')
         luci.sys.call('/usr/share/jd-dailybonus/newapp.sh -r')
-        luci.sys.call('/usr/share/jd-dailybonus/newapp.sh -a')
     end
     luci.http.write('')
 end
