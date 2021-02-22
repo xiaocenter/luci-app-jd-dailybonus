@@ -77,6 +77,11 @@ notify() {
         fi
         wget-ssl -q --output-document=/dev/null --post-data="text=$title~&desp=$desc" $serverurl$sckey.send
     fi
+    
+    #Dingding
+    dtoken=$(uci_get_by_type global dd_token)
+    serverchand_send="curl -s \"https://oapi.dingtalk.com/robot/send?access_token=${dtoken}\" -H 'Content-Type: application/json' -d '{\"msgtype\": \"markdown\",\"markdown\": {\"title\":\"${title}\",\"text\":\"${title} <br/> ${desc}\"}}'"
+    eval $serverchand_send >/dev/null 2>&1
 
     #telegram
     TG_BOT_TOKEN=$(uci_get_by_type global tg_token)
