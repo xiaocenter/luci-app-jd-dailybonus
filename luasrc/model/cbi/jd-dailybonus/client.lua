@@ -42,6 +42,12 @@ o = s:option(Value, 'serverchan', translate('Server酱 SCKEY'))
 o.rmempty = true
 o.description = translate('微信推送，基于Server酱服务，请自行登录 http://sc.ftqq.com/ 绑定并获取 SCKEY。')
 
+-- Dingding
+
+o = s:option(Value, 'dd_token', translate('Dingding Bot Token'))
+o.rmempty = true
+o.description = translate('首先新建钉钉群，创建一个群机器人，并获取API Token。')
+
 -- telegram
 
 o = s:option(Value, 'tg_token', translate('Telegram Bot Token'))
