@@ -80,8 +80,11 @@ notify() {
     
     #Dingding
     dtoken=$(uci_get_by_type global dd_token)
-    serverchand_send="curl -s \"https://oapi.dingtalk.com/robot/send?access_token=${dtoken}\" -H 'Content-Type: application/json' -d '{\"msgtype\": \"markdown\",\"markdown\": {\"title\":\"${title}\",\"text\":\"${title} <br/> ${desc}\"}}'"
-    eval $serverchand_send >/dev/null 2>&1
+    if [ ! -z $dtoken ]; then
+    	DTJ_FILE=/tmp/jd-djson.json
+	echo "{\"msgtype\": \"markdown\",\"markdown\": {\"title\":\"${title}\",\"text\":\"${title} <br/> ${desc}\"}}" > ${DTJ_FILE}
+    	wget-ssl -q --output-document=/dev/null --header="Content-Type: application/json" --post-file=/tmp/jd-djson.json "https://oapi.dingtalk.com/robot/send?access_token=${dtoken}"
+    fi
 
     #telegram
     TG_BOT_TOKEN=$(uci_get_by_type global tg_token)
