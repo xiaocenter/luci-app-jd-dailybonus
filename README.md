@@ -2,7 +2,7 @@
 Luci for JD dailybonus Script for Openwrt  
 一个运行在openwrt下的京东签到插件。
 
-### JD dailybonus Openwrt插件中的gitee源目前已经被和谐，如显示【根据相关法律政策,该内容无法显示】请切换至github源或GitHub CDN源进行更新，近期将会取消gitee更新。
+### gitee源目前已经被和谐，如显示【根据相关法律政策,该内容无法显示】请切换至github源或GitHub CDN源进行更新，近期将会取消gitee更新。
 
 ### Update Log 2021-01-25  v1.0.3
 
