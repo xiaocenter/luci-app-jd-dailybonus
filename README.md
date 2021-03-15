@@ -58,8 +58,8 @@ rm -rf /tmp/luci-indexcache /tmp/luci-modulecache/*
 ### 感谢
 
 感谢[NobyDa](https://github.com/NobyDa) 的脚本。  
-感谢[Promix953](https://github.com/Promix953) 的二次开发。 
-感谢[maple's sky](https://github.com/maplesky) 的二次开发。 
+感谢[Promix953](https://github.com/Promix953) 的二次开发。  
+感谢[maple's sky](https://github.com/maplesky) 的二次开发。  
 感谢[Mattraks](https://github.com/Mattraks) 的bug修复。 
 
 ### 我的其它项目
