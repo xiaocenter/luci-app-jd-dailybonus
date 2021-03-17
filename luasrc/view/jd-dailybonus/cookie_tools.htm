@@ -74,6 +74,10 @@
 
     // 创建二维码
     var make = new QRCode( code, { correctLevel: QRCode.CorrectLevel.L });
+    make.clear = function() {
+        code.getElementsByTagName("img").item(0).removeAttribute('src');
+        this._oDrawing.clear();
+    }
 
     // 关闭按钮
     var link = document.createElement('a');
@@ -97,6 +101,9 @@
 
     // 获取二维码
     var feedback = function() {
+        // 移除残留二维码
+        make.clear();
+
         // 获取通信数据
         XHR.get( '<%=luci.dispatcher.build_url("admin", "services", "jd-dailybonus","qrcode")%>', null, ( x, d ) => {
             if ( x.status != 200 ) {
@@ -106,7 +113,6 @@
             // 移除刷新
             load.remove();
             // 创建二维码
-            make.clear();
             make.makeCode( d.qrcode_url );
             // 元素居中
             center();
