@@ -96,7 +96,7 @@
         } else {
             code.style.top = selector.offsetTop - code.offsetHeight + "px";
         }
-        code.style.left = ( selector.offsetWidth - code.offsetWidth ) / 2 + "px";
+        code.style.left = ( selector.offsetWidth - code.offsetWidth ) / 2 + selector.offsetLeft +  "px";
     };
 
     // 获取二维码
